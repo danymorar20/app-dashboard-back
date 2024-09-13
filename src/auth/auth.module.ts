@@ -5,6 +5,7 @@ import { UsersModule } from 'src/users/users.module';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LoginModule } from './login/login.module';
+import { SignUpModule } from './sign-up/sign-up.module';
 
 @Module({
     imports: [
@@ -14,7 +15,8 @@ import { LoginModule } from './login/login.module';
             secret: process.env.JWT_SECRET_KEY,
             signOptions: { expiresIn: process.env.AUTH_EXPIRES_IN_HOUR }
         }),
-        LoginModule
+        LoginModule,
+        SignUpModule
     ],
     providers: [
         AuthService,

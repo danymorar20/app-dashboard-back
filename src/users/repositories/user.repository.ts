@@ -24,6 +24,6 @@ export class UserRepository implements UserRepositoryInterface {
       }
 
       async findByEmail(email: string): Promise<User> {
-          return this.userRepo.findOneOrFail({ where: { email: email }})
+          return this.userRepo.findOne({ where: { email: email }})
       }
 }
